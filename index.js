@@ -1,14 +1,16 @@
 const greeting = prompt("choose a flavor of froyo separated by commas");
 
-const froyo = greeting.split(" ");
-
-const flavorsAll = {};
-
+const froyo = [
+  { name: "chocolate" },
+  { name: "strawberry" },
+  { name: "coffee" },
+];
+let flavors = "";
 for (const flavors of froyo) {
-  if (flavorsAll[flavors]) {
-    flavorsAll[flavors]++;
+  if (froyo[flavors]) {
+    froyo[flavors]++;
   } else {
-    flavorsAll[flavors] = 1;
+    froyo[flavors] = 1;
   }
 }
-console.table(flavorsAll);
+console.table(froyo);
